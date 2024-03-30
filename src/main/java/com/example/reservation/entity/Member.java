@@ -1,4 +1,4 @@
-package com.example.reservation.domain;
+package com.example.reservation.entity;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -3,6 +3,11 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias type="com.example.reservation.domain.Member" alias="member"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.memberDto.MemberDto" alias="memberDto"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.memberDto.MemberLoginDto" alias="memberLoginDto"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.memberDto.MemberFindId" alias="memberFindId"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.memberDto.MemberFindPw" alias="memberFindPw"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.memberDto.MemberUpdate" alias="memberUpdate"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.memberDto.MemberDelete" alias="memberDelete"></typeAlias>
     </typeAliases>
 </configuration>
