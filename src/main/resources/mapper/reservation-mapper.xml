@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Reservation">
+    <insert id="save" parameterType="reservationDto">
+        insert into reservation (Symptom, member_member_id,docter_docter_id,money)
+                values(#{Symptom},#{member_member_id},#{docter_docter_id}, #{money})
+    </insert>
+    <update id="update" parameterType="reservationUpdateDto">
+        update reservation set docter_docter_id = #{docter_docter_id}, symptom = #{symptom}, money = #{money} where
+            member_member_id = #{member_member_id} and reservation_id = #{reservation_id}
+    </update>
+</mapper>

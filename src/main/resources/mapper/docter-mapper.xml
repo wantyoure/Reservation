@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Docter">
+    <insert id="save" parameterType="docterDto">
+        insert into docter (name,gender,age,id,password,address,phone,major_major_id)
+        values(#{name},#{gender},#{age},#{id},#{password},#{address},#{phone},#{major_major_id})
+    </insert>
+    <select id="login" parameterType="docterLoginDto" resultType="DocterLoginDto">
+        select * from member where id = #{id} and password = #{password}
+    </select>
+    <select id="findId" parameterType="docterFindIdDto" resultType="DocterFindIdDto">
+        select id from docter where name = #{name} and password = #{password}
+    </select>
+    <update id="update" parameterType="docterUpdateDto" >
+        update docter set password = #{password} , address = #{address} , phone = #{phone} where docter_id = #{docter_id}
+    </update>
+    <delete id="delete" parameterType="docterDeleteDto" >
+        delete from docter where docter_id = #{docter_id} and password = #{password}
+    </delete>
+</mapper>

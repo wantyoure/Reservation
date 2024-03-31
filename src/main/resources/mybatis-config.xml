@@ -3,11 +3,21 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
+        <!--회원 별칭 -->
         <typeAlias type="com.example.reservation.entity.memberDto.MemberDto" alias="memberDto"></typeAlias>
         <typeAlias type="com.example.reservation.entity.memberDto.MemberLoginDto" alias="memberLoginDto"></typeAlias>
         <typeAlias type="com.example.reservation.entity.memberDto.MemberFindId" alias="memberFindId"></typeAlias>
         <typeAlias type="com.example.reservation.entity.memberDto.MemberFindPw" alias="memberFindPw"></typeAlias>
         <typeAlias type="com.example.reservation.entity.memberDto.MemberUpdate" alias="memberUpdate"></typeAlias>
-        <typeAlias type="com.example.reservation.entity.memberDto.MemberDelete" alias="memberDelete"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.memberDto.MemberDeleteDto" alias="memberDelete"></typeAlias>
+        <!--의사 별칭 -->
+        <typeAlias type="com.example.reservation.entity.docterDto.DocterDto" alias="docterDto"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.docterDto.DocterLoginDto" alias="docterLoginDto"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.docterDto.DocterFindIdDto" alias="docterFindIdDto"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.docterDto.DocterUpdateDto" alias="docterUpdateDto"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.docterDto.DocterDeleteDto" alias="docterDeleteDto"></typeAlias>
+        <!--예약 별칭-->
+        <typeAlias type="com.example.reservation.entity.reservationDto.ReservationDto" alias="reservationDto"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.reservationDto.ReservationUpdateDto" alias="reservationUpdateDto"></typeAlias>
     </typeAliases>
 </configuration>

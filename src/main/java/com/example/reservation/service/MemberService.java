@@ -1,7 +1,6 @@
 package com.example.reservation.service;
 
 
-import com.example.reservation.entity.Member;
 import com.example.reservation.entity.memberDto.*;
 import com.example.reservation.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
@@ -46,7 +45,7 @@ public class MemberService {
         memberRepository.memberUpdate(memberUpdate);
     }
 
-    public void memberDelete(MemberDelete memberDelete) {
+    public void memberDelete(MemberDeleteDto memberDelete) {
         memberRepository.memberDelete(memberDelete);
     }
 }

@@ -1,7 +1,6 @@
 package com.example.reservation.controller;
 
 
-import com.example.reservation.entity.Member;
 import com.example.reservation.entity.memberDto.*;
 import com.example.reservation.service.MemberService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -10,7 +9,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -35,13 +33,13 @@ public class MemberController {
             @ApiResponse(responseCode = "404", description = "해당 ID의 유저가 존재하지 않습니다."),
     })
 
-    @PostMapping("/login")
-    public MemberLoginDto login(@RequestParam int member_id,
-                                @RequestParam int password) {
-        log.info("Login member_id={},password={}", member_id, password);
-        MemberLoginDto memberLoginDto = new MemberLoginDto();
-        memberLoginDto.setMember_id(member_id);
-        memberLoginDto.setPassword(password);
+        @PostMapping("/login")
+        public MemberLoginDto login(@RequestParam int member_id,
+        @RequestParam int password) {
+            log.info("Login member_id={},password={}", member_id, password);
+            MemberLoginDto memberLoginDto = new MemberLoginDto();
+            memberLoginDto.setMember_id(member_id);
+            memberLoginDto.setPassword(password);
         MemberLoginDto login = memberService.login(memberLoginDto);
         return login;
     }
@@ -89,6 +87,13 @@ public class MemberController {
         return findPw;
     }*/
 
+    @Tag(name="Member")
+    @Operation(summary = "회원정보 수정", description = "회원정보를 수정합니다.", method = "PUT")
+    @ApiResponses( value = {
+            @ApiResponse(responseCode = "200", description = "성공",
+            content = {@Content(schema = @Schema(implementation = MemberUpdate.class))}),
+            @ApiResponse(responseCode = "404", description = "실패")
+    })
     @PutMapping("/{member_id}/myPage")
     public String memberUpdate(@PathVariable int member_id,
                                @RequestParam int password,
@@ -98,15 +103,26 @@ public class MemberController {
         log.info("memberUpdate log={}", password);
         memberService.memberUpdate(memberUpdate);
         return "업데이트가 완료되었습니다.";
-
     }
-
+    @Tag(name = "Member")
+    @Operation(summary = "회원 삭제", description = "회원이 삭제됩니다.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "성공",
+            content = {@Content(schema = @Schema(implementation = MemberDeleteDto.class))}),
+            @ApiResponse(responseCode = "404", description = "실패")
+    })
     @DeleteMapping("/{member_id}/myPage")
     public String memberDelete(@PathVariable int member_id,
                                @RequestParam int password) {
-        MemberDelete memberDelete = new MemberDelete(member_id,password);
+        MemberDeleteDto memberDelete = new MemberDeleteDto(member_id,password);
         memberService.memberDelete(memberDelete);
         return "회원 삭제가 완료되었습니다.";
+    }
+    @Tag(name = "Member")
+    @Operation(summary = "회원 로그아웃", description = "회원 로그아웃합니다.")
+    @GetMapping("/logout")
+    public String logout() {
+        return "로그아웃 되었습니다.";
     }
 
 }

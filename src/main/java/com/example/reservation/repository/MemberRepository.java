@@ -1,10 +1,8 @@
 package com.example.reservation.repository;
 
 
-import com.example.reservation.entity.Member;
 import com.example.reservation.entity.memberDto.*;
 import lombok.RequiredArgsConstructor;
-import org.apache.ibatis.session.ResultHandler;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -34,7 +32,7 @@ public class MemberRepository {
         sql.update("Member.update",memberUpdate);
     }
 
-    public void memberDelete(MemberDelete memberDelete) {
+    public void memberDelete(MemberDeleteDto memberDelete) {
         sql.delete("Member.delete",memberDelete);
     }
 }
