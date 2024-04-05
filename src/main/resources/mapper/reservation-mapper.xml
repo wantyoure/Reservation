@@ -17,6 +17,6 @@
     </select>
     <select id="selectList" parameterType="docterReservationSearch" resultType="DocterReservationSearch">
         select member.name as name, member.gender as gender, member.age as age, member.address as address, member.phone as phone ,reservation.docter_docter_id as docter_id,reservation.Symptom as symptom,
-        reservation.createAt, reservation.money as money from reservation join member on reservation.member_member_id = member_member_id where docter_docter_id = 2;
+        reservation.createAt, reservation.money as money from reservation join member on reservation.member_member_id = member_member_id where docter_docter_id = #{docter_id};
     </select>
 </mapper>
