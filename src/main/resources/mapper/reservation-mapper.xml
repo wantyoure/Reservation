@@ -11,4 +11,12 @@
         update reservation set docter_docter_id = #{docter_docter_id}, symptom = #{symptom}, money = #{money} where
             member_member_id = #{member_member_id} and reservation_id = #{reservation_id}
     </update>
+    <select id="select" parameterType="reservationSearch" resultType="ReservationSearch">
+        select reservation.createAt as createAt, reservation.money as pay ,major.majorName as major, reservation.member_member_id as member_id from reservation join docter on reservation.docter_docter_id = docter.docter_id
+        join major on docter.major_major_id = major.major_id where reservation.member_member_id = #{member_id}
+    </select>
+    <select id="selectList" parameterType="docterReservationSearch" resultType="DocterReservationSearch">
+        select member.name as name, member.gender as gender, member.age as age, member.address as address, member.phone as phone ,reservation.docter_docter_id as docter_id,reservation.Symptom as symptom,
+        reservation.createAt, reservation.money as money from reservation join member on reservation.member_member_id = member_member_id where docter_docter_id = 2;
+    </select>
 </mapper>

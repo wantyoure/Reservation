@@ -125,4 +125,6 @@ public class MemberController {
         return "로그아웃 되었습니다.";
     }
 
+
+
 }

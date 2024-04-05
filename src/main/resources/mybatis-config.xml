@@ -19,5 +19,8 @@
         <!--예약 별칭-->
         <typeAlias type="com.example.reservation.entity.reservationDto.ReservationDto" alias="reservationDto"></typeAlias>
         <typeAlias type="com.example.reservation.entity.reservationDto.ReservationUpdateDto" alias="reservationUpdateDto"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.reservationDto.ReservationSearch" alias="reservationSearch"></typeAlias>
+        <typeAlias type="com.example.reservation.entity.reservationDto.DocterReservationSearch" alias="docterReservationSearch"></typeAlias>
+
     </typeAliases>
 </configuration>

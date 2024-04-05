@@ -2,9 +2,12 @@ package com.example.reservation.service;
 
 import com.example.reservation.entity.docterDto.*;
 import com.example.reservation.entity.memberDto.MemberUpdate;
+import com.example.reservation.entity.reservationDto.DocterReservationSearch;
 import com.example.reservation.repository.DocterRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -31,5 +34,9 @@ public class DocterService {
     public void docterDelete(DocterDeleteDto docterDeleteDto) {
         docterRepository.docterDelete(docterDeleteDto);
 
+    }
+
+    public List<DocterReservationSearch> select(DocterReservationSearch reservationSearch) {
+       return docterRepository.select(reservationSearch);
     }
 }

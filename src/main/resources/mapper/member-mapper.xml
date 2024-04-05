@@ -24,5 +24,6 @@
     <delete id="delete" parameterType="memberDelete">
         delete from member where member_id = #{member_id} and password = #{password}
     </delete>
+
 </mapper>
 

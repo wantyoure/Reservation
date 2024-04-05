@@ -1,6 +1,7 @@
 package com.example.reservation.service;
 
 import com.example.reservation.entity.reservationDto.ReservationDto;
+import com.example.reservation.entity.reservationDto.ReservationSearch;
 import com.example.reservation.entity.reservationDto.ReservationUpdateDto;
 import com.example.reservation.repository.ReservationRepository;
 import lombok.RequiredArgsConstructor;
@@ -20,5 +21,9 @@ public class ReservationService {
 
     public void update(ReservationUpdateDto reservationUpdateDto) {
         reservationRepository.update(reservationUpdateDto);
+    }
+
+    public ReservationSearch select(ReservationSearch reservationSearch) {
+        return reservationRepository.select(reservationSearch);
     }
 }
