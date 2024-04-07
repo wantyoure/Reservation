@@ -1,4 +1,4 @@
-package com.example.reservation.controller;
+package com.example.reservation.controller.member;
 
 
 import com.example.reservation.entity.memberDto.*;
