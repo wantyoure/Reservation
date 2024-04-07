@@ -1,12 +1,15 @@
 package com.example.reservation.entity.memberDto;
 
+import jakarta.validation.Valid;
 import lombok.Getter;
+import lombok.NonNull;
 import lombok.Setter;
 
 @Getter
 @Setter
 public class MemberDto {
 
+    @NonNull
     private String name;
     private String gender;
     private int age;
