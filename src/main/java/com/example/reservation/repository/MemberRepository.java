@@ -20,15 +20,15 @@ public class MemberRepository {
         return sql.selectOne("Member.login", memberLoginDto);
     }
 
-    public MemberFindId findId(MemberFindId memberFindId) {
+    public MemberFindIdDto findId(MemberFindIdDto memberFindId) {
         return sql.selectOne("Member.findId",memberFindId);
     }
 
-    public MemberFindPw findPw(MemberFindPw memberFindPw) {
+    public MemberFindPwDto findPw(MemberFindPwDto memberFindPw) {
         return sql.selectOne("Member.findPw",memberFindPw);
     }
 
-    public void memberUpdate(MemberUpdate memberUpdate) {
+    public void memberUpdate(MemberUpdateDto memberUpdate) {
         sql.update("Member.update",memberUpdate);
     }
 

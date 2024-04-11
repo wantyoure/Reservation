@@ -11,17 +11,17 @@
     <select id="login" parameterType="memberLoginDto" resultType="MemberLoginDto">
         select name,member_id,password from member where member_id = #{memberId} and password = #{password}
     </select>
-    <select id="findId" parameterType="memberFindId" resultType="MemberFindId">
+    <select id="findId" parameterType="memberFindIdDto" resultType="MemberFindIdDto">
         select id from member where name = #{name} and password = #{password}
     </select>
-    <select id="findPw" parameterType="memberFindPw" resultType="MemberFindPw">
+    <select id="findPw" parameterType="memberFindPwDto" resultType="MemberFindPwDto">
         select id,address,password from member where id = #{id} and address = #{address}
     </select>
-    <update id="update" parameterType="memberUpdate" >
+    <update id="update" parameterType="memberUpdateDto" >
         update member set password = #{password}, address = #{address}, phone = #{phone} where
         member_id = #{memberId}
     </update>
-    <delete id="delete" parameterType="memberDelete">
+    <delete id="delete" parameterType="memberDeleteDto">
         delete from member where member_id = #{memberId} and password = #{password}
     </delete>
 

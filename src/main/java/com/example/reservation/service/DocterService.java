@@ -1,7 +1,6 @@
 package com.example.reservation.service;
 
 import com.example.reservation.entity.docterDto.*;
-import com.example.reservation.entity.memberDto.MemberUpdate;
 import com.example.reservation.entity.reservationDto.DocterReservationSearch;
 import com.example.reservation.repository.DocterRepository;
 import lombok.RequiredArgsConstructor;

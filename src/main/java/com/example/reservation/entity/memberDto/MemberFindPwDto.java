@@ -5,16 +5,16 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class MemberFindPw {
+public class MemberFindPwDto {
 
     private String id;
     private String address;
     private int password;
 
-    public MemberFindPw() {
+    public MemberFindPwDto() {
     }
 
-    public MemberFindPw(String id, String address, int password) {
+    public MemberFindPwDto(String id, String address, int password) {
         this.id = id;
         this.address = address;
         this.password = password;

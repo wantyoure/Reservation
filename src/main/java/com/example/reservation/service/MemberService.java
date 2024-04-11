@@ -28,17 +28,17 @@ public class MemberService {
         }
     }
 
-        public MemberFindId findId(MemberFindId memberFindId) {
+        public MemberFindIdDto findId(MemberFindIdDto memberFindId) {
             return memberRepository.findId(memberFindId);
     }
 
-    public MemberFindPw findPw(MemberFindPw memberFindPw) {
-        MemberFindPw pw = memberRepository.findPw(memberFindPw);
+    public MemberFindPwDto findPw(MemberFindPwDto memberFindPw) {
+        MemberFindPwDto pw = memberRepository.findPw(memberFindPw);
         System.out.println(pw.getPassword());
         return pw;
     }
 
-    public void memberUpdate(MemberUpdate memberUpdate) {
+    public void memberUpdate(MemberUpdateDto memberUpdate) {
         memberRepository.memberUpdate(memberUpdate);
     }
 

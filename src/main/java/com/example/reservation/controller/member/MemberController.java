@@ -58,27 +58,27 @@ public class MemberController {
     @Operation(summary ="회원 아이디 찾기", description = "회원의 아아디 찾기", method = "GET")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "성공",
-            content = {@Content(schema = @Schema(implementation = MemberFindId.class))}),
+            content = {@Content(schema = @Schema(implementation = MemberFindIdDto.class))}),
             @ApiResponse(responseCode = "404", description = "회원 찾기에 실패했습니다.")
     })
     @GetMapping("/find/id")
     public String findId (@RequestParam String name,
                           @RequestParam int password) {
-            MemberFindId memberFindId = new MemberFindId();
+            MemberFindIdDto memberFindId = new MemberFindIdDto();
             memberFindId.setName(name);
             memberFindId.setPassword(password);
             log.info("member name={},password={}", name, password);
-            MemberFindId id = memberService.findId(memberFindId);
+            MemberFindIdDto id = memberService.findId(memberFindId);
             return id.getId();
     }
 
    @GetMapping("/find/pw")
-    public MemberFindPw findPw (@RequestParam String id,
-                       @RequestParam String address) {
-        MemberFindPw memberFindPw = new MemberFindPw();
+    public MemberFindPwDto findPw (@RequestParam String id,
+                                   @RequestParam String address) {
+        MemberFindPwDto memberFindPw = new MemberFindPwDto();
         memberFindPw.setId(id);
         memberFindPw.setAddress(address);
-        MemberFindPw findPw = memberService.findPw(memberFindPw);
+        MemberFindPwDto findPw = memberService.findPw(memberFindPw);
         log.info("member findPw={}",findPw.getPassword());
         return findPw;
     }
@@ -87,7 +87,7 @@ public class MemberController {
     @Operation(summary = "회원정보 수정", description = "회원정보를 수정합니다.", method = "PUT")
     @ApiResponses( value = {
             @ApiResponse(responseCode = "200", description = "성공",
-            content = {@Content(schema = @Schema(implementation = MemberUpdate.class))}),
+            content = {@Content(schema = @Schema(implementation = MemberUpdateDto.class))}),
             @ApiResponse(responseCode = "404", description = "실패")
     })
     @PutMapping("/{member_id}/myPage")
@@ -95,7 +95,7 @@ public class MemberController {
                                @RequestParam int password,
                                @RequestParam String address,
                                @RequestParam int phone) {
-        MemberUpdate memberUpdate = new MemberUpdate(member_id,password,address,phone);
+        MemberUpdateDto memberUpdate = new MemberUpdateDto(member_id,password,address,phone);
         log.info("memberUpdate log={}", password);
         memberService.memberUpdate(memberUpdate);
         return "업데이트가 완료되었습니다.";

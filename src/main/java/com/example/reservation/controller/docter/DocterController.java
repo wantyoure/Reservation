@@ -1,7 +1,6 @@
 package com.example.reservation.controller.docter;
 
 import com.example.reservation.entity.docterDto.*;
-import com.example.reservation.entity.memberDto.MemberUpdate;
 import com.example.reservation.service.DocterService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;

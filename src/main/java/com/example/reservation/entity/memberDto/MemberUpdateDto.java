@@ -6,16 +6,16 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class MemberUpdate {
+public class MemberUpdateDto {
     private int memberId;
     private int password;
     private String address;
     private int phone;
 
-    public MemberUpdate() {
+    public MemberUpdateDto() {
     }
 
-    public MemberUpdate(int memberId,int password, String address, int phone) {
+    public MemberUpdateDto(int memberId, int password, String address, int phone) {
         this.memberId = memberId;
         this.password = password;
         this.address = address;

@@ -1,7 +1,6 @@
 package com.example.reservation.repository;
 
 import com.example.reservation.entity.docterDto.*;
-import com.example.reservation.entity.memberDto.MemberUpdate;
 import com.example.reservation.entity.reservationDto.DocterReservationSearch;
 import lombok.RequiredArgsConstructor;
 import org.mybatis.spring.SqlSessionTemplate;
