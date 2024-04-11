@@ -8,7 +8,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class ReservationSearch {
-    private int member_id;
+    private int memberId;
     private String major;
     private Date  createAt;
     private String pay;
@@ -18,8 +18,8 @@ public class ReservationSearch {
 
     }
 
-    public ReservationSearch(int member_id, String major, Date createAt, String pay) {
-        this.member_id = member_id;
+    public ReservationSearch(int memberId, String major, Date createAt, String pay) {
+        this.memberId = memberId;
         this.major = major;
         this.createAt = createAt;
         this.pay = pay;

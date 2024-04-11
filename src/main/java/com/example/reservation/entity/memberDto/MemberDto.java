@@ -9,7 +9,6 @@ import lombok.Setter;
 @Setter
 public class MemberDto {
 
-    @NonNull
     private String name;
     private String gender;
     private int age;

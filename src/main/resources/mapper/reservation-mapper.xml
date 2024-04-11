@@ -4,19 +4,19 @@
 
 <mapper namespace="Reservation">
     <insert id="save" parameterType="reservationDto">
-        insert into reservation (Symptom, member_member_id,docter_docter_id,money)
-                values(#{Symptom},#{member_member_id},#{docter_docter_id}, #{money})
+        insert into reservation (Symptom, member_id,docter_id,money)
+                values(#{Symptom},#{memberId},#{docterId}, #{money})
     </insert>
     <update id="update" parameterType="reservationUpdateDto">
-        update reservation set docter_docter_id = #{docter_docter_id}, symptom = #{symptom}, money = #{money} where
-            member_member_id = #{member_member_id} and reservation_id = #{reservation_id}
+        update reservation set docter_id = #{docterId}, symptom = #{symptom}, money = #{money} where
+        member_id = #{memberId} and reservation_id = #{reservationId}
     </update>
     <select id="select" parameterType="reservationSearch" resultType="ReservationSearch">
-        select reservation.createAt as createAt, reservation.money as pay ,major.majorName as major, reservation.member_member_id as member_id from reservation join docter on reservation.docter_docter_id = docter.docter_id
-        join major on docter.major_major_id = major.major_id where reservation.member_member_id = #{member_id}
+        select reservation.createAt as createAt, reservation.money as pay ,major.majorName as major, reservation.member_id from reservation join docter on reservation.docter_id = docter.docter_id
+        join major on docter.major_id = major.major_id where reservation.member_id = #{memberId}
     </select>
     <select id="selectList" parameterType="docterReservationSearch" resultType="DocterReservationSearch">
-        select member.name as name, member.gender as gender, member.age as age, member.address as address, member.phone as phone ,reservation.docter_docter_id as docter_id,reservation.Symptom as symptom,
-        reservation.createAt, reservation.money as money from reservation join member on reservation.member_member_id = member_member_id where docter_docter_id = #{docter_id};
+        select member.name as name, member.gender as gender, member.age as age, member.address as address, member.phone as phone ,reservation.docter_id ,reservation.Symptom as symptom,
+        reservation.createAt, reservation.money as money from reservation join member on reservation.member_id = member_id where docter_id = #{docterId};
     </select>
 </mapper>

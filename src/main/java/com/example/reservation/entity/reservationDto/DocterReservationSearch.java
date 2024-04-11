@@ -9,7 +9,7 @@ import java.sql.Date;
 @Setter
 public class DocterReservationSearch {
 
-    private int docter_id;
+    private int docterId;
     private String name;
     private String gender;
     private int age;
@@ -22,9 +22,9 @@ public class DocterReservationSearch {
     public DocterReservationSearch() {
     }
 
-    public DocterReservationSearch(int docter_id, String name, String gender, int age, String address, int phone, String symptom, Date createAt, String money) {
+    public DocterReservationSearch(int docterId, String name, String gender, int age, String address, int phone, String symptom, Date createAt, String money) {
 
-        this.docter_id = docter_id;
+        this.docterId = docterId;
         this.name = name;
         this.gender = gender;
         this.age = age;

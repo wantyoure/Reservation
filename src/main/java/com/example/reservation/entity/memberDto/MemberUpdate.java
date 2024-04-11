@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class MemberUpdate {
-    private int member_id;
+    private int memberId;
     private int password;
     private String address;
     private int phone;
@@ -15,8 +15,8 @@ public class MemberUpdate {
     public MemberUpdate() {
     }
 
-    public MemberUpdate(int member_id,int password, String address, int phone) {
-        this.member_id = member_id;
+    public MemberUpdate(int memberId,int password, String address, int phone) {
+        this.memberId = memberId;
         this.password = password;
         this.address = address;
         this.phone = phone;

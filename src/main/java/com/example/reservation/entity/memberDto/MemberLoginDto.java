@@ -9,15 +9,15 @@ import org.apache.ibatis.session.ResultHandler;
 @Setter
 public class MemberLoginDto {
 
-    private int member_id;
+    private int memberId;
     private int password;
     private String name;
 
     public MemberLoginDto() {
     }
 
-    public MemberLoginDto(int member_id, int password, String name) {
-        this.member_id = member_id;
+    public MemberLoginDto(int memberId, int password, String name) {
+        this.memberId = memberId;
         this.password = password;
         this.name = name;
     }

@@ -10,17 +10,17 @@ import java.sql.Date;
 public class ReservationDto {
 
     private String Symptom;
-    private int member_member_id;
-    private int docter_docter_id;
+    private int memberId;
+    private int docterId;
     private String money;
 
     public ReservationDto() {
     }
 
-    public ReservationDto(String symptom, int member_member_id, int docter_docter_id, String money) {
+    public ReservationDto(String symptom, int memberId, int docterId, String money) {
         this.Symptom = symptom;
-        this.member_member_id = member_member_id;
-        this.docter_docter_id = docter_docter_id;
+        this.memberId = memberId;
+        this.docterId = docterId;
         this.money = money;
     }
 }

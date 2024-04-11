@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class DocterUpdateDto {
 
-    private int docter_id;
+    private int docterId;
     private int password;
     private String address;
     private int phone;
@@ -15,8 +15,8 @@ public class DocterUpdateDto {
     public DocterUpdateDto() {
     }
 
-    public DocterUpdateDto(int docter_id, int password, String address, int phone) {
-        this.docter_id = docter_id;
+    public DocterUpdateDto(int docterId, int password, String address, int phone) {
+        this.docterId = docterId;
         this.password = password;
         this.address = address;
         this.phone = phone;

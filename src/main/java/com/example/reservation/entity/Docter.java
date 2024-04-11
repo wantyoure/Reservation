@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class Docter {
 
-    private int docter_id;
+    private int docterId;
     private String name;
     private String gender;
     private int age;
@@ -15,13 +15,13 @@ public class Docter {
     private int password;
     private String address;
     private int phone;
-    private int major_major_id;
+    private int majorId;
 
     public Docter() {
     }
 
-    public Docter(int docter_id, String name, String gender, int age, String id, int password, String address, int phone, int major_major_id) {
-        this.docter_id = docter_id;
+    public Docter(int docterId, String name, String gender, int age, String id, int password, String address, int phone, int majorId) {
+        this.docterId = docterId;
         this.name = name;
         this.gender = gender;
         this.age = age;
@@ -29,6 +29,6 @@ public class Docter {
         this.password = password;
         this.address = address;
         this.phone = phone;
-        this.major_major_id = major_major_id;
+        this.majorId = majorId;
     }
 }

@@ -9,19 +9,19 @@ import java.util.Date;
 @Setter
 public class ReservationUpdateDto {
 
-    private int member_member_id;
-    private int reservation_id;
-    private int docter_docter_id;
+    private int memberId;
+    private int reservationId;
+    private int docterId;
     private String symptom;
     private String money;
 
     public ReservationUpdateDto() {
     }
 
-    public ReservationUpdateDto(int reservation_id,int member_member_id, int docter_docter_id, String symptom, String money) {
-        this.reservation_id = reservation_id;
-        this.member_member_id = member_member_id;
-        this.docter_docter_id = docter_docter_id;
+    public ReservationUpdateDto(int reservationId,int memberId, int docterId, String symptom, String money) {
+        this.reservationId = reservationId;
+        this.memberId = memberId;
+        this.docterId = docterId;
         this.symptom = symptom;
         this.money = money;
     }

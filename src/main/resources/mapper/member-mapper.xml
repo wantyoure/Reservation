@@ -9,7 +9,7 @@
             values(#{name},#{gender},#{age},#{id},#{password},#{address},#{phone})
     </insert>
     <select id="login" parameterType="memberLoginDto" resultType="MemberLoginDto">
-        select name,member_id,password from member where member_id = #{member_id} and password = #{password}
+        select name,member_id,password from member where member_id = #{memberId} and password = #{password}
     </select>
     <select id="findId" parameterType="memberFindId" resultType="MemberFindId">
         select id from member where name = #{name} and password = #{password}
@@ -19,10 +19,10 @@
     </select>
     <update id="update" parameterType="memberUpdate" >
         update member set password = #{password}, address = #{address}, phone = #{phone} where
-            member_id = #{member_id}
+        member_id = #{memberId}
     </update>
     <delete id="delete" parameterType="memberDelete">
-        delete from member where member_id = #{member_id} and password = #{password}
+        delete from member where member_id = #{memberId} and password = #{password}
     </delete>
 
 </mapper>

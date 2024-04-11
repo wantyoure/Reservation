@@ -16,12 +16,12 @@ public class DocterDto {
     private int password;
     private String address;
     private int phone;
-    private int major_major_id;
+    private int majorId;
 
     public DocterDto() {
     }
 
-    public DocterDto(String name, String gender, int age, String id, int password, String address, int phone, int major_major_id) {
+    public DocterDto(String name, String gender, int age, String id, int password, String address, int phone, int majorId) {
         this.name = name;
         this.gender = gender;
         this.age = age;
@@ -29,6 +29,6 @@ public class DocterDto {
         this.password = password;
         this.address = address;
         this.phone = phone;
-        this.major_major_id = major_major_id;
+        this.majorId = majorId;
     }
 }

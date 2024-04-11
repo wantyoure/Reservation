@@ -20,11 +20,8 @@ public class MemberService {
 
     public MemberLoginDto login(MemberLoginDto memberLoginDto) {
         MemberLoginDto login = memberRepository.login(memberLoginDto);
-        System.out.println(memberLoginDto.getMember_id());
-        System.out.println(login.getMember_id());
-        System.out.println(login.getName());
 
-        if (memberLoginDto.getMember_id() == login.getMember_id()) {
+        if (memberLoginDto.getMemberId() == login.getMemberId()) {
             return login;
         } else  {
             return null;

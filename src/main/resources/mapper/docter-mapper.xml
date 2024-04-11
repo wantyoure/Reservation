@@ -4,8 +4,8 @@
 
 <mapper namespace="Docter">
     <insert id="save" parameterType="docterDto">
-        insert into docter (name,gender,age,id,password,address,phone,major_major_id)
-        values(#{name},#{gender},#{age},#{id},#{password},#{address},#{phone},#{major_major_id})
+        insert into docter (name,gender,age,id,password,address,phone,major_id)
+        values(#{name},#{gender},#{age},#{id},#{password},#{address},#{phone},#{majorId})
     </insert>
     <select id="login" parameterType="docterLoginDto" resultType="DocterLoginDto">
         select * from member where id = #{id} and password = #{password}
@@ -14,9 +14,9 @@
         select id from docter where name = #{name} and password = #{password}
     </select>
     <update id="update" parameterType="docterUpdateDto" >
-        update docter set password = #{password} , address = #{address} , phone = #{phone} where docter_id = #{docter_id}
+        update docter set password = #{password} , address = #{address} , phone = #{phone} where docter_id = #{docterId}
     </update>
     <delete id="delete" parameterType="docterDeleteDto" >
-        delete from docter where docter_id = #{docter_id} and password = #{password}
+        delete from docter where docter_id = #{docterId} and password = #{password}
     </delete>
 </mapper>

@@ -32,14 +32,10 @@ public class MemberController {
                     content = {@Content(schema = @Schema(implementation = MemberLoginDto.class))}),
             @ApiResponse(responseCode = "404", description = "해당 ID의 유저가 존재하지 않습니다."),
     })
-
+        
         @PostMapping("/login")
-        public MemberLoginDto login(@RequestParam int member_id,
-        @RequestParam int password) {
-            log.info("Login member_id={},password={}", member_id, password);
-            MemberLoginDto memberLoginDto = new MemberLoginDto();
-            memberLoginDto.setMember_id(member_id);
-            memberLoginDto.setPassword(password);
+        public MemberLoginDto login(@RequestBody MemberLoginDto memberLoginDto) {
+        log.info("memberLoginDto log={}",memberLoginDto);
         MemberLoginDto login = memberService.login(memberLoginDto);
         return login;
     }
@@ -76,7 +72,7 @@ public class MemberController {
             return id.getId();
     }
 
-/*    @GetMapping("/find/pw") 이거 선생님한테 물어보기
+   @GetMapping("/find/pw")
     public MemberFindPw findPw (@RequestParam String id,
                        @RequestParam String address) {
         MemberFindPw memberFindPw = new MemberFindPw();
@@ -85,7 +81,7 @@ public class MemberController {
         MemberFindPw findPw = memberService.findPw(memberFindPw);
         log.info("member findPw={}",findPw.getPassword());
         return findPw;
-    }*/
+    }
 
     @Tag(name="Member")
     @Operation(summary = "회원정보 수정", description = "회원정보를 수정합니다.", method = "PUT")

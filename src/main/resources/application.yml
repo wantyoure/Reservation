@@ -42,3 +42,7 @@ springdoc:
 
     # swagger-ui?? try ?? ? request duration? ???? ??
     display-request-duration: true
+
+    mybatis:
+      configuration:
+        map-underscore-to-camel-case=true:

@@ -7,14 +7,14 @@ import lombok.Setter;
 @Setter
 public class DocterDeleteDto {
 
-    private int docter_id;
+    private int docterid;
     private int password;
 
     public DocterDeleteDto() {
     }
 
-    public DocterDeleteDto(int docter_id, int password) {
-        this.docter_id = docter_id;
+    public DocterDeleteDto(int docterId, int password) {
+        this.docterid = docterId;
         this.password = password;
     }
 }
