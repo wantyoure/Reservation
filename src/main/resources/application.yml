@@ -46,3 +46,12 @@ springdoc:
     mybatis:
       configuration:
         map-underscore-to-camel-case=true:
+
+# OAuth2
+
+  spring:
+    security:
+      oauth2:
+        client:
+          clientId: #인증번호
+          clientSecret:  #인증번호
